@@ -23,7 +23,6 @@ use glutin_window::GlutinWindow as Window;
 use opengl_graphics::{ GlGraphics, OpenGL };
 use resources::event::RenderEvents;
 use resources::time::DeltaTime;
-use specs::DispatcherBuilder;
 use std::ops::DerefMut;
 use specs::RunNow;
 
@@ -61,21 +60,21 @@ fn main() {
                         world.write_resource::<RenderEvents>().deref_mut().args = Some(r);
                         renderer.run_now(&world.res);
                     },
-                    Loop::Update(u) => {
+                    Loop::Update(_u) => {
                         println!("TODO: dispatch update event");
                     },
-                    Loop::Idle(i) => {
+                    Loop::Idle(_i) => {
                         println!("TODO: dispatch idle event");
                     },
-                    Loop::AfterRender(i) => {
+                    Loop::AfterRender(_i) => {
                         println!("TODO: dispatch afterRender event");
                     }
                 }
             },
-            Event::Input(i) => {
+            Event::Input(_i) => {
                 println!("TODO: dispatch input event");
             },
-            Event::Custom(eventId, arc) => {
+            Event::Custom(_event_id, _arc) => {
                 println!("TODO: dispatch custom event");
             }
         }

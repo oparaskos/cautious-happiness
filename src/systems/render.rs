@@ -1,9 +1,7 @@
 use resources::graphics::GraphicsContext;
 use components::{position::Position, rotation::Rotation};
-use resources::{time::DeltaTime, event::RenderEvents};
-use opengl_graphics::{ GlGraphics };
+use resources::event::RenderEvents;
 use specs::{Read, Write, ReadStorage, System};
-use std::ops::Deref;
 use specs::Join;
 
 /// App some comment

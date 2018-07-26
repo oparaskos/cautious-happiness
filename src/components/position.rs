@@ -1,5 +1,5 @@
 use graphics::math::Scalar;
-use specs::{Component, VecStorage};
+use specs::VecStorage;
 
 #[derive(Component, Debug)]
 #[storage(VecStorage)]
